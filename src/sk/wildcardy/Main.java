@@ -30,9 +30,11 @@ public class Main {
 
     // wildcardy - argument wieloznaczny to: ?
     // suzy do ograniczenia typow
-    private static <T extends Maszyna> void wyswietlElement(int i, ArrayList<? extends Maszyna> arrayList) {
+    // ? extends ClassName - typy z klasy oraz klas dziedziczacych
+    // ? super ClassName - typy z ograniczeniem do klasy ClassName
+    private static <T extends Maszyna> void wyswietlElement(int i, ArrayList<?> arrayList) {
 
-        T e = arrayList.get(i);
+        Object e = arrayList.get(i);
         System.out.println("Element: " + e);
         System.out.println("Typ elementu: " + e.getClass().getName());
 
