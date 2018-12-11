@@ -12,7 +12,7 @@ public class Strumienie {
         // Utworzenie setu danych
         ArrayList<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 100; i++) {
             arrayList.add(random.nextInt());
         }
 
