@@ -1,6 +1,8 @@
 package sk.wielowatkowosc;
 
-public class MyThread extends Thread{
+import java.util.stream.IntStream;
+
+public class MyThread extends Thread {
 
     public MyThread(String name) {
         super(name);
@@ -8,6 +10,6 @@ public class MyThread extends Thread{
 
     @Override
     public void run() {
-        System.out.println("My thread : "+ Thread.currentThread().getName() );
+        IntStream.rangeClosed(1, 20).forEach(i -> System.out.println(i + " | Thread: " + Thread.currentThread().getName()));
     }
 }

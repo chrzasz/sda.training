@@ -5,7 +5,9 @@ public class Main {
 
         System.out.println("Main thread : "+ Thread.currentThread().getName() );
         Thread thread = new MyThread("My Thread 1");
+        Thread thread2 = new MyThread("My Thread 2");
 
         thread.start();
+        thread2.start();
     }
 }
