@@ -9,5 +9,10 @@ public class Main {
 
         thread.start();
         thread2.start();
+
+        Runnable runnable = new MyRunnable();
+        Thread anotherThread = new Thread(runnable, "My-Runnable-1");
+
+        anotherThread.start();
     }
 }
