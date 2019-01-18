@@ -3,15 +3,16 @@ package sk.wielowatkowosc;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Main thread : "+ Thread.currentThread().getName() );
-        Thread thread = new MyThread("My Thread 1");
+        System.out.println("Main thread : " + Thread.currentThread().getName());
+        Thread thread1 = new MyThread("My Thread 1");
         Thread thread2 = new MyThread("My Thread 2");
 
-        thread.start();
+        thread1.start();
         thread2.start();
 
-        Runnable runnable = new MyRunnable();
-        Thread anotherThread = new Thread(runnable, "My-Runnable-1");
+        Thread anotherThread = new Thread(
+                () -> System.out.println("Runnable thread : " + Thread.currentThread().getName()),
+                "My-Runnable-1");
 
         anotherThread.start();
     }
